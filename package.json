@@ -1,0 +1,35 @@
+{
+  "name": "ts-data-wrangler",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "",
+  "author": {
+    "name": "Chad Elliott",
+    "email": "chad.d.elliott@gmail.com"
+  },
+  "keywords": [],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index",
+  "types": "lib/index",
+  "scripts": {
+    "clean": "rimraf lib",
+    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty",
+    "watch": "npm run build -- --watch"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^4.6.2"
+  },
+  "engines": {
+    "node": ">=17.0.0"
+  }
+}
